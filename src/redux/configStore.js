@@ -20,6 +20,11 @@ export const ConfigureStore = () => {
           price: "",
           description: "",
         },
+        addItemForm: {
+          name: "",
+          price: "",
+          description: "",
+        },
       }),
     }),
     applyMiddleware(thunk, logger)

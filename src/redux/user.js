@@ -11,7 +11,6 @@ export const User = (state = { user: null }, action) => {
         ...state,
         user: null,
       };
-
     default:
       return state;
   }

@@ -16,6 +16,19 @@ export const Items = (state = { items: ITEMS }, action) => {
         ...state,
         items: state.items.filter((item) => item != action.payload),
       };
+    case ActionTypes.ADD_ITEM:
+      let maxId = 0;
+      state.items.forEach((element) => {
+        if (element.id > maxId) {
+          maxId = element.id;
+        }
+      });
+      maxId = maxId + 1;
+
+      return {
+        ...state,
+        items: state.items.concat({ ...action.payload, id: maxId }),
+      };
 
     default:
       return state;

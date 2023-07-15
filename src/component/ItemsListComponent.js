@@ -41,14 +41,17 @@ const ItemsList = (props) => {
         <Table bordered>
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th className="w-25 ">Action</th>
+              <th className="bg-primary">ID</th>
+              <th className="bg-primary">Name</th>
+              <th className="bg-primary">Price</th>
+              <th className="w-25 bg-primary">Action</th>
             </tr>
           </thead>
           <tbody>{menu}</tbody>
         </Table>
+        <Link to={`/add`}>
+          <button className="btn btn-info mx-1">Add Item</button>
+        </Link>
       </div>
     </div>
   );

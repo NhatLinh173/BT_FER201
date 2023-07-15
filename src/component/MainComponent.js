@@ -8,10 +8,12 @@ import {
   removeUser,
   removeItem,
   editItem,
+  addIteam,
 } from "../redux/actionCreater";
 import ItemDetail from "./ItemDetailComponent";
 import TopBar from "./TopbarComponent";
 import EditItem from "./EditItemComponent";
+import AddItem from "./AddItemComponets";
 import Footer from "./Footer";
 
 const mapStateToProps = (state) => {
@@ -26,6 +28,7 @@ const mapDispatchToProps = (dispatch) => ({
   removeUser: () => dispatch(removeUser()),
   removeItem: (item) => dispatch(removeItem(item)),
   editItem: (item) => dispatch(editItem(item)),
+  addItem: (item) => dispatch(addIteam(item)),
 });
 
 class Main extends React.Component {
@@ -86,6 +89,16 @@ class Main extends React.Component {
           ></Route>
           <Route path="/detail/:id" component={itemWithId}></Route>
           <Route path="/edit/:id" component={editWithId}></Route>
+          <Route
+            path="/add"
+            component={() => (
+              <AddItem
+                history={this.props.history}
+                addUser={this.props.addUser}
+                addItem={this.props.addItem}
+              />
+            )}
+          ></Route>
         </Switch>
         <Footer />
       </div>

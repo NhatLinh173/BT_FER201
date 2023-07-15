@@ -14,3 +14,7 @@ export const editItem = (item) => ({
   type: ActionType.ITEM_EDIT,
   payload: item,
 });
+export const addIteam = (item) => ({
+  type: ActionType.ADD_ITEM,
+  payload: item,
+});

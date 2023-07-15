@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = (props) => {
   const item = props.item;
-  console.log(item);
   return (
     <div>
       <div className="text-center mt-5">
